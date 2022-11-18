@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
-    rel="stylesheet" />
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Travel Planner</title>
 </head>
+
 <body>
-    <header class="header">
-        <div>
-            <h1>Smart Traveler</h1>
+    <header class="hero">
+        <div class="header">
+
+            <h1 id="hero-header">Smart Traveler</h1>
+        </div>
+
+        <div class="search">
+            <input id="search-input" class="input is-info is-md" type="text" placeholder="Search City!">
+
+            <div><button class="button is-info is-small">
+                    <h2>Show Me</h2>
+                </button></div>
         </div>
     </header>
-
-    <div class="search">
-        <input id="search-input" class="form-input" type="text" placeholder="Search City!">
-        
-        <button class="button">
-            <h2>Show Me</h2>
-        </button>
-    </div>
 
     <div class="welcome">
         <h1>Welcome To:</h1>
@@ -35,4 +38,5 @@
 
     <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
+
 </html>
