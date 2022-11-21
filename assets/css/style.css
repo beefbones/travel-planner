@@ -1,9 +1,4 @@
 
-.grid-container-main {
-    display: grid;
-    grid-template-columns: 100%;
-    text-align: center;
-}
 
 .hero {
     background-image: url(../images/earth.jpg);
@@ -15,23 +10,21 @@
     justify-content: space-around;
 }
 
-#hero-header{
+
+.header{
     color: white;
-    
+    font-size: 80px;
 }
+
+
 .search {
     text-align: center;
 }
 
-#search-input {
-    width: 200px;
-}
 
 .button {
     align-items: center;
     margin-top: 5px;
 }
-h1 {
-    font-size: 50px;
-    text-align: center;
-}
+
+

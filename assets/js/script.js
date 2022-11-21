@@ -1,3 +1,10 @@
+var cityinfo = createElement('ul')
+var population = createElement('li')
+var elevation = createElement('li')
+var timeZone = createElement('li')
+var cityinfo = queryselector('.city-info')
+
+
 const options = {
     method: 'GET',
     headers: {
