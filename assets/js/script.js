@@ -26,6 +26,7 @@ var searchInputEl = document.querySelector("#search-input");
 
 
 function handleShowMeButtonClick (event) {
+    event.preventDefault();
     //API Url variables
     var weatherApiKey = "c0fe5b27487172b898ec093746e91718";
     var weatherCityName = searchInputEl.value.trim();
