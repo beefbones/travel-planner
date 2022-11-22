@@ -1,8 +1,8 @@
-var cityinfo = createElement('ul')
-var population = createElement('li')
-var elevation = createElement('li')
-var timeZone = createElement('li')
-var cityinfo = queryselector('.city-info')
+var cityinfo = document.createElement('ul')
+var population = document.createElement('li')
+var elevation = document.createElement('li')
+var timeZone = document.createElement('li')
+var cityinfo = document.querySelector('.city-info')
 
 
 const options = {
