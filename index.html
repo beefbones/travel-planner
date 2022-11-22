@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
-    rel="stylesheet" />
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Travel Planner</title>
 </head>
+
 <body>
-    <header class="header">
-        <div>
-            <h1>Smart Traveler</h1>
-        </div>
-    </header>
+    <div class="hero">
+        <header class="header">
+            <div class="mt-6 pt-6">
+                <h1>Smart Traveler</h1>
+            </div>
+        </header>
 
-    <section class="search">
-        <input id="search-input" class="form-input" type="text" placeholder="Search City!">
-        
-        <button class="button">
-            <h2>Show Me</h2>
-        </button>
-    </section>
+        <section class="search mb-6 pb-6">
+            <input id="search-input" class="form-input" type="text" placeholder="Search City!">
 
-    <section class="welcome">
+            <div><button class="button">
+                    <h2>Show Me</h2>
+                </button></div>
+        </section>
+    </div>
+
+
+    <section class="welcome section">
         <h1>Welcome To:</h1>
     </section>
 
-    <section class="city">
+    <section class="city section">
         <h2>Information About:</h2>
-        <div id="city-info">
-
+        <div class ="city-info">
         </div>
     </section>
 
     <section class="weather">
-        <h2>Weather for the Week</h2>
-        <div id="weather-info">
+        <div class="section">
+            <h2>Weather for the Week</h2>
+        </div>
+        <div class="container">
+            <div class="columns" id="weather-info">
 
+            </div>
         </div>
     </section>
 
     <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
+
 </html>
