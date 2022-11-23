@@ -42,7 +42,7 @@ function getWeather(weatherCityName) {
     console.log('currentWeatherApiUrl: ', currentWeatherApiUrl);
 
     //forecast variables
-    var cityName;
+    var cityName;                              
     var population;
     var country;
     var day1Date;
