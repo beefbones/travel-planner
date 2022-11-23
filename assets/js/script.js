@@ -3,11 +3,14 @@ dayjs.extend(window.dayjs_plugin_timezone);
 
 
 
-var cityinfo = document.createElement('ul')
-var population = document.createElement('li')
+var cityinfoEl = document.createElement('ul')
+var populationEl = document.createElement('li')
 var elevation = document.createElement('li')
 var timeZone = document.createElement('li')
-var cityinfo = document.querySelector('.city-info')
+var cityInfo = document.querySelector('.city-info')
+var searches = document.querySelector('#city-history')
+var searched = JSON.parse(localStorage.getItem('history')) || [];
+
 const options = {
     method: 'GET',
     headers: {
@@ -45,7 +48,7 @@ function getWeather(weatherCityName) {
     // console.log('currentWeatherApiUrl: ', currentWeatherApiUrl);
 
     //forecast variables
-    var cityName;
+    var cityName;                              
     var population;
     var country;
     var day1Date = dayjs().add(1, 'day').format('YYYY-MM-DD');
@@ -286,6 +289,21 @@ function getWeather(weatherCityName) {
         // currentCardTempMaxEl.append(Math.floor(currentTempMax));    
     });
     
+}
+
+// Create function to get city history
+function grabHistory()  {
+    searches.innerHTML = "";
+    for (var i = 0; i < searched.length; i++) {
+        var list = document.createElement('li');
+        list.textContent = searched[i];
+        searches.append(list);
+
+        list.addEventListener('click', function(event) {
+            var text = event.target.innerHTML
+
+        })
+    }
 }
 
 showMeButton.addEventListener("click", handleShowMeButtonClick);

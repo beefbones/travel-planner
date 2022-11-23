@@ -11,12 +11,6 @@
 }
 
 
-.header{
-    color: white;
-    font-size: 80px;
-}
-
-
 .search {
     text-align: center;
 }
@@ -47,3 +41,9 @@
     box-shadow: 5px 5px 0 0 black;
 
 }
+
+.columns {
+    justify-content: center;
+    
+}
+
