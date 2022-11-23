@@ -32,11 +32,12 @@ function getWeather(weatherCityName) {
     var weatherApiKey = "c0fe5b27487172b898ec093746e91718";
     weatherCityName = weatherCityName.replaceAll(' ', '+');
     var weatherCountryCode = "US";
-    var weatherLimit = "1";
+    var weatherLimit = "1";                             
     var forecastWeatherApiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${weatherCityName}&units=imperial&appid=${weatherApiKey}`;
     var currentWeatherApiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${weatherCityName}&units=imperial&appid=${weatherApiKey}`;
     console.log('forecastWeatherApiUrl: ', forecastWeatherApiUrl);
     console.log('currentWeatherApiUrl: ', currentWeatherApiUrl);
+
     //forecast variables
     var cityName;
     var population;

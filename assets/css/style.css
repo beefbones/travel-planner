@@ -36,3 +36,12 @@
 }
 
 
+.card {
+    background: rgba(0, 0, 0, 0.212);
+    color: white;
+    padding: 1em;
+    border-radius: 30px;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+}
