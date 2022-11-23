@@ -35,12 +35,11 @@ function handleShowMeButtonClick (event) {
     var weatherLimit = "1";                             
     var forecastWeatherApiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${weatherCityName}&units=imperial&appid=${weatherApiKey}`;
     var currentWeatherApiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${weatherCityName}&units=imperial&appid=${weatherApiKey}`;
-
     console.log('forecastWeatherApiUrl: ', forecastWeatherApiUrl);
     console.log('currentWeatherApiUrl: ', currentWeatherApiUrl);
     
     //forecast variables
-    var cityName;
+    var cityName;                              
     var population;
     var country;
     var day1Date;

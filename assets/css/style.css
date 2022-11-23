@@ -11,12 +11,6 @@
 }
 
 
-.header{
-    color: white;
-    font-size: 80px;
-}
-
-
 .search {
     text-align: center;
 }
@@ -37,3 +31,10 @@
     height: 250px;
     margin: 10px;
 }
+
+
+.columns {
+    justify-content: center;
+    
+}
+
