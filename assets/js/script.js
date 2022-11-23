@@ -1,8 +1,8 @@
-var cityinfo = document.createElement('ul')
-var population = document.createElement('li')
+var cityinfoEl = document.createElement('ul')
+var populationEl = document.createElement('li')
 var elevation = document.createElement('li')
 var timeZone = document.createElement('li')
-var cityinfo = document.querySelector('.city-info')
+var cityInfo = document.querySelector('.city-info')
 var searches = document.querySelector('#city-history')
 var searched = JSON.parse(localStorage.getItem('history')) || [];
 
