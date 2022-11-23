@@ -27,6 +27,14 @@
     margin-top: 5px;
 }
 
+.current-date-card{
+
+
+    color:yellowgreen;
+    display: contents;
+
+}
+
 
 .card {
     background: rgba(0, 0, 0, 0.212);
