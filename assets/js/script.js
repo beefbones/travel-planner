@@ -32,7 +32,7 @@ function handleShowMeButtonClick (event) {
     var weatherCityName = searchInputEl.value.trim();
     weatherCityName = weatherCityName.replaceAll(' ', '+');
     var weatherCountryCode = "US";
-    var weatherLimit = "1";
+    var weatherLimit = "1";                             
     var forecastWeatherApiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${weatherCityName}&units=imperial&appid=${weatherApiKey}`;
     var currentWeatherApiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${weatherCityName}&units=imperial&appid=${weatherApiKey}`;
 
