@@ -19,27 +19,29 @@
                 <h1>Smart Traveler</h1>
             </div>
         </header>
-
+        <!-- Create section for user input -->
         <section class="search mb-6 pb-6">
             <input id="search-input" class="input is-primary is-small is-rounded form-input" type="text" placeholder="Search City!">
 
-            <div><button class="button is-primary is-small is-rounded">
+            <div>
+                <button class="button is-primary is-rounded">
                     <h2>Show Me</h2>
-                </button></div>
+                </button>
+            </div>
         </section>
     </div>
 
-
+    <!-- Create section to display city name -->
     <section class="welcome section">
         <h1>Welcome To:</h1>
     </section>
-
+    <!-- Create section for city information -->
     <section class="city section">
         <h2>Information About:</h2>
         <div class ="city-info">
         </div>
     </section>
-
+    <!-- Create section for weather forecast -->
     <section class="weather">
         <div class="section">
             <h2>Weather for the Week</h2>
@@ -69,11 +71,19 @@
         </div>
     </section>
 
-    <scrip src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    <section class="history section">
+        <div>
+            <h2>City History</h2>
+        </div>
+        <ul class="container" id="city-history">
+        </ul>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
 
-</html>
+</html> 

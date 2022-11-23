@@ -38,7 +38,7 @@ function handleShowMeButtonClick (event) {
 
     console.log('forecastWeatherApiUrl: ', forecastWeatherApiUrl);
     console.log('currentWeatherApiUrl: ', currentWeatherApiUrl);
-
+    
     //forecast variables
     var cityName;
     var population;
