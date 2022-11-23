@@ -3,6 +3,9 @@ var population = document.createElement('li')
 var elevation = document.createElement('li')
 var timeZone = document.createElement('li')
 var cityinfo = document.querySelector('.city-info')
+var searches = document.querySelector('#city-history')
+var searched = JSON.parse(localStorage.getItem('history')) || [];
+
 const options = {
     method: 'GET',
     headers: {
@@ -37,6 +40,7 @@ function getWeather(weatherCityName) {
     var currentWeatherApiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${weatherCityName}&units=imperial&appid=${weatherApiKey}`;
     console.log('forecastWeatherApiUrl: ', forecastWeatherApiUrl);
     console.log('currentWeatherApiUrl: ', currentWeatherApiUrl);
+
     //forecast variables
     var cityName;                              
     var population;
@@ -145,5 +149,20 @@ function getWeather(weatherCityName) {
         console.log("weatherIcon:", weatherIcon);
         console.log("weatherIconURL:", weatherIconURL);
     });
+}
+
+// Create function to get city history
+function grabHistory()  {
+    searches.innerHTML = "";
+    for (var i = 0; i < searched.length; i++) {
+        var list = document.createElement('li');
+        list.textContent = searched[i];
+        searches.append(list);
+
+        list.addEventListener('click', function(event) {
+            var text = event.target.innerHTML
+
+        })
+    }
 }
 showMeButton.addEventListener("click", handleShowMeButtonClick);
