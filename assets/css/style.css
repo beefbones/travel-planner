@@ -19,7 +19,9 @@
 .button {
     align-items: center;
     margin-top: 5px;
+    transition-duration: .2s;
 }
+
 
 .current-date-card{
 
@@ -30,15 +32,16 @@
 }
 
 
-.card {
+/* .card {
     background: rgba(0, 0, 0, 0.212);
     color: white;
     padding: 1em;
     border-radius: 30px;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     margin: 10px;
-}
+    align-content: center;
+} */
 
 
 .columns {

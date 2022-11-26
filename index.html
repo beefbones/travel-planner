@@ -21,10 +21,10 @@
         </header>
         <!-- Create section for user input -->
         <section class="search mb-6 pb-6">
-            <input id="search-input" class="input is-primary is-rounded is-large form-input" type="text" placeholder="Search City!">
+            <input id="search-input" class="input is-dark is-rounded is-large form-input" type="text" placeholder="Search City!">
 
             <div>
-                <button class="button is-primary is-rounded">
+                <button class="button is-dark is-rounded">
                     <h2>Show Me</h2>
                 </button>
             </div>
@@ -33,43 +33,62 @@
 
     <!-- Create section to display city name -->
     <section class="section is-size-3 has-text-light">
-        <h1>Welcome To:</h1>
+        <h1 class="box">Welcome To:</h1>
+        <h1 class="cityName"></h1>
     </section>
     <!-- Create section for city information -->
     <section class="city section is-size-4 has-text-light">
         <h2>Information About:</h2>
-        <div class ="city-info">
+        <div class ="name">
         </div>
     </section>
+
     <!-- Create section for weather forecast -->
-    <section class="weather">
-        <div class="section is-size-4 has-text-light">
+    <section class="section">
+        <div class="container is-size-4 has-text-light">
             <h2>Weather for the Week</h2>
-        </div>
-        <div class="columns">
 
+    <div class="columns is-multiline is-mobile">
+
+            <div class="column is-6-mobile is-4-tablet is-2-desktop">
             <div class="card" id="info1">
+                <div class="image"></div>
+                <div class="content"><p></p>
+                    <p class="day">Monday</p></div>
+            </div></div>
 
+            <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="card" id="info1">
+                <div class="image"></div>
+                <div class="content"><p></p>
+                    <p class="day">Tuesday</p></div>
+            </div></div>
+
+            <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="card" id="info1">
+                <div class="image"></div>
+                <div class="content"><p></p>
+                    <p class="day">Wednesday</p></div>
+            </div></div>
+
+            <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="card" id="info1">
+                <div class="image"></div>
+                <div class="content"><p></p>
+                    <p class="day">Thursday</p></div>
+            </div></div>
+
+        <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="card" id="info1">
+                <div class="image"></div>
+                <div class="content"><p></p>
+                    <p class="day">Friday</p></div>
             </div>
-
-            <div class="card" id="info2">
-
-            </div>
-
-            <div class="card" id="info3">
-
-            </div>
-
-            <div class="card" id="info4">
-
-            </div>
-
-            <div class="card" id="info5">
-
-            </div>
-            
+        </div>
+    </div>  
         </div>
     </section>
+
 
     <section class="history section">
         <div class="section is-size-4 has-text-light">
