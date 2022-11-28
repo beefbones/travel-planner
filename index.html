@@ -21,133 +21,161 @@
         </header>
         <!-- Create section for user input -->
         <section class="search mb-6 pb-6">
-            <input id="search-input" class="input is-dark is-rounded is-large form-input" type="text" placeholder="Search City!">
+            <input id="search-input" class="input is-dark is-rounded is-large form-input" type="text"
+                placeholder="Search City!">
 
             <div>
-                <button class="button is-dark is-rounded">
+                <button type="button" onclick="show()" class="button show is-dark is-rounded">
                     <h2>Show Me</h2>
                 </button>
             </div>
         </section>
     </div>
 
-    <!-- Create section to display city name -->
-    <section class="section is-size-3 has-text-light">
-        <h1 class="box">Welcome To:</h1>
-        <h1 class="cityName"></h1>
-    </section>
-    <!-- Create section for city information -->
-    <section class="city section is-size-4 has-text-light">
-        <h2>Information About:</h2>
-        <div class ="name">
-        </div>
-    </section>
-
-    <!-- Create section for weather forecast -->
-    <section class="section">
-        <div class="container is-size-4 has-text-light">
-            <h2>Weather for the Week</h2>
-
-    <div class="columns is-multiline is-mobile">
-
-            <div class="column is-6-mobile is-4-tablet is-2-desktop">
-            <div class="card" id="info1">
-                <div class="image"></div>
-                <div class="content"><p></p>
-                    <p class="day">Monday</p></div>
-            </div></div>
-
-            <div class="column is-6-mobile is-4-tablet is-2-desktop">
-            <div class="card" id="info1">
-                <div class="image"></div>
-                <div class="content"><p></p>
-                    <p class="day">Tuesday</p></div>
-            </div></div>
-
-            <div class="column is-6-mobile is-4-tablet is-2-desktop">
-            <div class="card" id="info1">
-                <div class="image"></div>
-                <div class="content"><p></p>
-                    <p class="day">Wednesday</p></div>
-            </div></div>
-
-            <div class="column is-6-mobile is-4-tablet is-2-desktop">
-            <div class="card" id="info1">
-                <div class="image"></div>
-                <div class="content"><p></p>
-                    <p class="day">Thursday</p></div>
-            </div></div>
-
-        <div class="column is-6-mobile is-4-tablet is-2-desktop">
-            <div class="card" id="info1">
-                <div class="image"></div>
-                <div class="content"><p></p>
-                    <p class="day">Friday</p></div>
-              
-        </div>
-        <div class="columns" style="place-content: center;">
-
-            <div class="card" id="info1">
-                <p id="currentDate" style="font-size: x-large;"></p>
-                <br>
-                <div style="display: table-row;"><span id="currentTemp" style="font-size: 40px; display:table-cell; vertical-align:middle;"></span><span style="font-size: 40px; display:table-cell; vertical-align:middle;">&#176;F</span><img id="weatherIcon"> </div>
-                <!-- <br> -->
-                <p>Min: <span id="currentTempMin" ></span><span style="margin-right: 25px;">&#176;F</span> Max: <span id="currentTempMax"></span><span>&#176;F</span></p>
+<div id='mainbg'>
+    <main id="hide" style="display:none;">
+        <!-- Create section to display city name -->
+        <section class="section is-size-3 has-text-light">
+            <h1 class="box">Welcome To:</h1>
+            <h1 class="cityName"></h1>
+        </section>
+        <!-- Create section for city information -->
+        <section class="city section is-size-4 has-text-light">
+            <h2>Information About:</h2>
+            <div class="name">
             </div>
+        </section>
 
-            <div class="card" id="info2">
-                <p id="day1Date" style="font-size: x-large;"></p>
-                <br>
-                <div style="display: table-row;"><span id="forecastTempDay1" style="font-size: 40px; display:table-cell; vertical-align:middle;"></span><span style="font-size: 40px; display:table-cell; vertical-align:middle;">&#176;F</span><img id="forecastWeatherIconDay1"> </div>
-                <!-- <br> -->
-                <p>Min: <span id="day1LT" ></span><span style="margin-right: 25px;">&#176;F</span> Max: <span id="day1HT"></span><span>&#176;F</span></p>
+        <!-- Create section for weather forecast -->
+        <section class="section">
+            <div class="container is-size-4 has-text-light">
+                <h2>Weather for the Week</h2>
+
+                <div class="columns is-multiline is-mobile">
+
+                    <div class="column is-half-mobile is-4-tablet is-one-fifth-desktop">
+
+                        <div class="card" id="info1">
+                            <p id="currentDate"></p>
+
+                            <div class="column">
+                                <span id="currentTemp"></span>
+                                <span>&#176;F</span>
+                                <img id="weatherIcon">
+                            </div>
+                            <p>L: <span id="currentTempMin"></span>
+                                <span>&#176;F</span>
+                                H:
+                                <span id="currentTempMax"></span>
+                                <span>&#176;F</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="column is-half-mobile is-4-tablet is-one-fifth-desktop">
+                        <div class="card" id="info1">
+                            <p id="day1Date"></p>
+
+                            <div>
+                                <span id="forecastTempDay1"></span>
+                                <span>&#176;F</span>
+                                <img id="forecastWeatherIconDay1">
+                            </div>
+                            <p>L: <span id="day1LT"></span>
+                                <span>&#176;F</span>
+                                H:
+                                <span id="day1HT"></span>
+                                <span>&#176;F</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="column is-6-mobile is-4-tablet is-one-fifth-desktop">
+                        <div class="card" id="info1">
+                            <p id="day2Date"></p>
+
+                            <div>
+                                <span id="forecastTempDay2"></span>
+                                <span>&#176;F</span>
+                                <img id="forecastWeatherIconDay2">
+                            </div>
+                            <p>L: <span id="day2LT"></span>
+                                <span>&#176;F</span>
+                                H:
+                                <span id="day2HT"></span>
+                                <span>&#176;F</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="column is-6-mobile is-4-tablet is-one-fifth-desktop">
+                        <div class="card" id="info1">
+                            <p id="day3Date"></p>
+
+                            <div>
+                                <span id="forecastTempDay3"></span>
+                                <span>&#176;F</span>
+                                <img id="forecastWeatherIconDay3">
+                            </div>
+                            <p>L: <span id="day3LT"></span>
+                                <span>&#176;F</span>
+                                H:
+                                <span id="day3HT"></span>
+                                <span>&#176;F</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="column is-6-mobile is-4-tablet is-one-fifth-desktop">
+                        <div class="card" id="info1">
+                            <p id="day4Date"></p>
+
+                            <div>
+                                <span id="forecastTempDay4"></span>
+                                <span>&#176;F</span>
+                                <img id="forecastWeatherIconDay4">
+                            </div>
+                            <p>L: <span id="day4LT"></span>
+                                <span>&#176;F</span>
+                                H:
+                                <span id="day4HT"></span>
+                                <span>&#176;F</span>
+                            </p>
+                        </div>
+
+                    </div>
+
+
+
+                   
+                </div>
             </div>
+            
+        </section>
 
-            <div class="card" id="info3">
-                <p id="day2Date" style="font-size: x-large;"></p>
-                <br>
-                <div style="display: table-row;"><span id="forecastTempDay2" style="font-size: 40px; display:table-cell; vertical-align:middle;"></span><span style="font-size: 40px; display:table-cell; vertical-align:middle;">&#176;F</span><img id="forecastWeatherIconDay2"> </div>
-                <!-- <br> -->
-                <p>Min: <span id="day2LT" ></span><span style="margin-right: 25px;">&#176;F</span> Max: <span id="day2HT"></span><span>&#176;F</span></p>
+
+        <section class="history section">
+            <div class="section is-size-4 has-text-light">
+                <h2>City History</h2>
             </div>
+            <ul class="container" id="city-history">
+            </ul>
+        </section>
+    </main>
+</div>
 
-            <div class="card" id="info4">
-                <p id="day3Date" style="font-size: x-large;"></p>
-                <br>
-                <div style="display: table-row;"><span id="forecastTempDay3" style="font-size: 40px; display:table-cell; vertical-align:middle;"></span><span style="font-size: 40px; display:table-cell; vertical-align:middle;">&#176;F</span><img id="forecastWeatherIconDay3"> </div>
-                <!-- <br> -->
-                <p>Min: <span id="day3LT" ></span><span style="margin-right: 25px;">&#176;F</span> Max: <span id="day3HT"></span><span>&#176;F</span></p>
-            </div>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/utc.min.js"
+        integrity="sha512-m00bfmYnAl3plEBlQfeQUhw/U2uvmw29V2+jxSWpAjankMWS+zAsjezbKWDEJNXqWq9o9qQZSOiA2RKDpa4D5w=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/timezone.min.js"
+        integrity="sha512-pslqxxHAYPCxaSeFSmXXxDkLejD5dbFVC66aiVq0z4v7VTJBU+wqcG1OpNh4p3MjS2D6NCwz/H2QmSc7dXxryg=="
+        crossorigin="anonymous"></script>
 
-            <div class="card" id="info5">
-                <p id="day4Date" style="font-size: x-large;"></p>
-                <br>
-                <div style="display: table-row;"><span id="forecastTempDay4" style="font-size: 40px; display:table-cell; vertical-align:middle;"></span><span style="font-size: 40px; display:table-cell; vertical-align:middle;">&#176;F</span><img id="forecastWeatherIconDay4"> </div>
-                <!-- <br> -->
-                <p>Min: <span id="day4LT" ></span><span style="margin-right: 25px;">&#176;F</span> Max: <span id="day4HT"></span><span>&#176;F</span></p>
-              
-            </div>
-        </div>
-    </div>  
-        </div>
-    </section>
-
-
-    <section class="history section">
-        <div class="section is-size-4 has-text-light">
-            <h2>City History</h2>
-        </div>
-        <ul class="container" id="city-history">
-        </ul>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/utc.min.js" integrity="sha512-m00bfmYnAl3plEBlQfeQUhw/U2uvmw29V2+jxSWpAjankMWS+zAsjezbKWDEJNXqWq9o9qQZSOiA2RKDpa4D5w==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/timezone.min.js" integrity="sha512-pslqxxHAYPCxaSeFSmXXxDkLejD5dbFVC66aiVq0z4v7VTJBU+wqcG1OpNh4p3MjS2D6NCwz/H2QmSc7dXxryg==" crossorigin="anonymous"></script>
-   
     <script type="text/javascript" src="./assets/js/script.js"></script>
 
 
 </body>
 
-</html> 
+</html>

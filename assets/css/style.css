@@ -10,6 +10,10 @@
     justify-content: space-around;
 }
 
+ #mainbg{
+    background-color: rgb(27, 27, 27);
+
+}
 
 .search {
     text-align: center;
@@ -23,25 +27,28 @@
 }
 
 
-.current-date-card{
-
-
-    color: black;
-    display: contents;
-
+#currentDate {
+    color: rgb(38, 104, 158);
+    text-align: center;
+    font-size: 40px;
 }
 
+#day1Date,#day2Date,#day3Date,#day4Date {
+    color: white;
+    text-align: center;
+    font-size: 35px;
+}
 
-/* .card {
-    background: rgba(0, 0, 0, 0.212);
-    padding: 1em;
-    border-radius: 30px;
-    width: 200px;
-    height: 200px;
-    margin: 10px;
+#forecastTempDay1,#forecastTempDay2,#forecastTempDay3,#forecastTempDay4 {
     align-content: center;
-} */
+}
+span{
+    color: white;
+    
+}
 
+.card {
+    background-color: rgb(27, 27, 27);
 }
 
 .columns {
