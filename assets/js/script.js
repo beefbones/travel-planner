@@ -42,8 +42,8 @@ function getWeather(weatherCityName) {
     weatherCityName = weatherCityName.replaceAll(' ', '+');
     var weatherCountryCode = "US";
     var weatherLimit = "1";                             
-    var forecastWeatherApiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${weatherCityName}&units=imperial&appid=${weatherApiKey}`;
-    var currentWeatherApiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${weatherCityName}&units=imperial&appid=${weatherApiKey}`;
+    var forecastWeatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${weatherCityName}&units=imperial&appid=${weatherApiKey}`;
+    var currentWeatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCityName}&units=imperial&appid=${weatherApiKey}`;
     // console.log('forecastWeatherApiUrl: ', forecastWeatherApiUrl);
     // console.log('currentWeatherApiUrl: ', currentWeatherApiUrl);
 
@@ -176,7 +176,7 @@ function getWeather(weatherCityName) {
          // forecastCardTempEl.append(Math.floor(forecastTempDay1));
 
          const forecastCardWeatherIconEl = document.getElementById("forecastWeatherIconDay1");
-         forecastCardWeatherIconEl.setAttribute('src', `http://openweathermap.org/img/wn/${forecastWeatherIconDay1}@2x.png`);
+         forecastCardWeatherIconEl.setAttribute('src', `https://openweathermap.org/img/wn/${forecastWeatherIconDay1}@2x.png`);
 
          const forecastCardTempMinEl = document.getElementById("day1HT");
          forecastCardTempMinEl.textContent = (Math.floor(day1HT));
@@ -196,7 +196,7 @@ function getWeather(weatherCityName) {
          // forecastCardTempDay2El.append(Math.floor(forecastTempDay2));
 
          const forecastCardWeatherIconDay2El = document.getElementById("forecastWeatherIconDay2");
-         forecastCardWeatherIconDay2El.setAttribute('src', `http://openweathermap.org/img/wn/${forecastWeatherIconDay2}@2x.png`);
+         forecastCardWeatherIconDay2El.setAttribute('src', `https://openweathermap.org/img/wn/${forecastWeatherIconDay2}@2x.png`);
 
          const forecastCardTempMinDay2El = document.getElementById("day2HT");
          forecastCardTempMinDay2El.textContent = (Math.floor(day2HT));
@@ -216,7 +216,7 @@ function getWeather(weatherCityName) {
         // forecastCardTempDay3El.append(Math.floor(forecastTempDay3));
 
          const forecastCardWeatherIconDay3El = document.getElementById("forecastWeatherIconDay3");
-         forecastCardWeatherIconDay3El.setAttribute('src', `http://openweathermap.org/img/wn/${forecastWeatherIconDay3}@2x.png`);
+         forecastCardWeatherIconDay3El.setAttribute('src', `https://openweathermap.org/img/wn/${forecastWeatherIconDay3}@2x.png`);
 
          const forecastCardTempMinDay3El = document.getElementById("day3HT");
          forecastCardTempMinDay3El.textContent = (Math.floor(day3HT));
@@ -236,7 +236,7 @@ function getWeather(weatherCityName) {
         // forecastCardTempDay4El.append(Math.floor(forecastTempDay4));
 
          const forecastCardWeatherIconDay4El = document.getElementById("forecastWeatherIconDay4");
-         forecastCardWeatherIconDay4El.setAttribute('src', `http://openweathermap.org/img/wn/${forecastWeatherIconDay4}@2x.png`);
+         forecastCardWeatherIconDay4El.setAttribute('src', `https://openweathermap.org/img/wn/${forecastWeatherIconDay4}@2x.png`);
 
          const forecastCardTempMinDay4El = document.getElementById("day4HT");
          forecastCardTempMinDay4El.textContent = (Math.floor(day4HT));
@@ -258,7 +258,7 @@ function getWeather(weatherCityName) {
         var currentTempMax = data.main.temp_max;
         var weatherDescription = data.weather[0].description;
         var weatherIcon = data.weather[0].icon;
-        var weatherIconURL = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
+        var weatherIconURL = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
         // console.log("currentDate:", currentDate);
         // console.log("currentTemp:", currentTemp);
         // console.log("currentTempFeels:", currentTempFeels);
