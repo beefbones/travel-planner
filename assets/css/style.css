@@ -10,9 +10,54 @@
     justify-content: space-around;
 }
 
- #mainbg{
-    background-color: rgb(27, 27, 27);
+.cityinfo h2{
+    margin-bottom: 35px;
+}
 
+#welcometo{
+    text-align: center;
+    font-size: 50px;
+}
+
+.section h1{
+    text-align: center;
+}
+
+.cityinfo{
+text-align: center;
+}
+
+.cityinfo h2{
+    font-size: 40px;
+}
+
+ul{
+    line-height: 60px;
+}
+
+.cityinfo h2{
+    margin-bottom: 35px;
+}
+
+#welcometo{
+    text-align: center;
+    font-size: 50px;
+}
+
+.section h1{
+    text-align: center;
+}
+
+.cityinfo{
+text-align: center;
+}
+
+.cityinfo h2{
+    font-size: 40px;
+}
+
+ul{
+    line-height: 60px;
 }
 
 .search {

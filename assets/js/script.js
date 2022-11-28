@@ -3,13 +3,41 @@ dayjs.extend(window.dayjs_plugin_timezone);
 
 
 
-var cityinfoEl = document.createElement('ul')
-var populationEl = document.createElement('li')
-var elevation = document.createElement('li')
-var timeZone = document.createElement('li')
-var cityInfo = document.querySelector('.city-info')
-var searches = document.querySelector('#city-history')
+var CityInputEl = document.querySelector('.input');
+var searches = document.querySelector('#city-history');
 var searched = JSON.parse(localStorage.getItem('history')) || [];
+
+function getCity(cityInput) {
+//API URL Variables
+var cityApiKey = "xz9CFx5R4H8EGh1CEKp44F6fmYieC9PB";
+var cityApiUrl = `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${cityApiKey}&q=${cityInput}`;
+
+
+//Accu city data fetch
+fetch(cityApiUrl)
+.then( function (response) {
+    return response.json();
+})
+.then(function (data){
+console.log(data[0])
+
+
+cityInput = data.EnglishName;
+var cityInput = data.list;
+console.log(data)
+
+
+//Current city varaibles
+    var welcometo = data[0].EnglishName;
+    var state = data[0].AdministrativeArea.LocalizedName;
+    var country = data[0].Country.EnglishName;
+    var region = data[0].Region.LocalizedName;
+    var location1 = data[0].GeoPosition.Longitude;
+    var location2 = data[0].GeoPosition.Latitude;
+    var time = data[0].TimeZone.Code;
+    
+
+//Create Elements and append
 
 
 function show() {
@@ -19,18 +47,39 @@ function show() {
 
 
 
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': 'a0a60927ed0fb9fdcec46e044d6a3a77',
-        'X-RapidAPI-Host': '"wft-geo-db.p.rapidapi.com'
-    }
-};
-fetch('http://geodb-free-service.wirefreethought.com/v1/geo/cities')
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+const currentcityEl = document.getElementById("welcometo");
+//currentcityEl.textContent = (welcometo);   
+currentcityEl.append(welcometo);
 
+const stateEl = document.getElementById("state");
+//stateEl.textContent = (state);
+stateEl.append(state);
+
+const countryEl = document.getElementById("country");
+//countryEl.textContent = (country);
+countryEl.append(country);
+
+const regionEl = document.getElementById("region");
+//regionEl.textContent = (region);
+regionEl.append(region);
+
+const longitudeEl = document.getElementById("location1");
+//longitudeEl.textContent = (location1);      
+longitudeEl.append(location1);
+
+const latitudeEl = document.getElementById("location2");
+//latitudeEl.textContent = (location2);   
+latitudeEl.append(location2);
+
+const timezoneEl = document.getElementById("time");
+//timezoneEl.textContent = (time);
+timezoneEl.append(time);   
+
+});
+}
+
+
+ 
 //DOM Elements for weather
 var showMeButton = document.querySelector(".button");
 var searchInputEl = document.querySelector("#search-input");
@@ -39,9 +88,8 @@ function handleShowMeButtonClick(event) {
     event.preventDefault();
     var cityName = searchInputEl.value.trim();
     getWeather(cityName);
-
-
-    
+var currentCity = searchInputEl.value.trim();
+    getCity(currentCity)
 }
 
 function getWeather(weatherCityName) {
