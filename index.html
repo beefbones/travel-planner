@@ -21,10 +21,10 @@
         </header>
         <!-- Create section for user input -->
         <section class="search mb-6 pb-6">
-            <input id="search-input" class="input is-primary is-rounded is-large form-input" type="text" placeholder="Search City!">
+            <input id="search-input" class="input is-dark is-rounded is-large form-input" type="text" placeholder="Search City!">
 
             <div>
-                <button class="button is-primary is-rounded">
+                <button class="button is-dark is-rounded">
                     <h2>Show Me</h2>
                 </button>
             </div>
@@ -33,6 +33,7 @@
 
     <!-- Create section to display city name -->
     <section class="section is-size-3 has-text-light">
+
         <h1 id="welcometo"> Welcome To  </h1>
     </section>
     <!-- Create section for city information -->
@@ -49,12 +50,58 @@
                 <li id="location2">Latitude: </li>
                 <li id="time">Time Zone: </li>
             </ul>
+
+      
+    </section>
+    <!-- Create section for city information -->
+    <section class="city section is-size-4 has-text-light">
+        <h2>Information About:</h2>
+        <div class ="name">
+
         </div>
     </section>
+
     <!-- Create section for weather forecast -->
-    <section class="weather">
-        <div class="section is-size-4 has-text-light">
+    <section class="section">
+        <div class="container is-size-4 has-text-light">
             <h2>Weather for the Week</h2>
+
+    <div class="columns is-multiline is-mobile">
+
+            <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="card" id="info1">
+                <div class="image"></div>
+                <div class="content"><p></p>
+                    <p class="day">Monday</p></div>
+            </div></div>
+
+            <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="card" id="info1">
+                <div class="image"></div>
+                <div class="content"><p></p>
+                    <p class="day">Tuesday</p></div>
+            </div></div>
+
+            <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="card" id="info1">
+                <div class="image"></div>
+                <div class="content"><p></p>
+                    <p class="day">Wednesday</p></div>
+            </div></div>
+
+            <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="card" id="info1">
+                <div class="image"></div>
+                <div class="content"><p></p>
+                    <p class="day">Thursday</p></div>
+            </div></div>
+
+        <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="card" id="info1">
+                <div class="image"></div>
+                <div class="content"><p></p>
+                    <p class="day">Friday</p></div>
+              
         </div>
         <div class="columns" style="place-content: center;">
 
@@ -96,10 +143,13 @@
                 <div style="display: table-row;"><span id="forecastTempDay4" style="font-size: 40px; display:table-cell; vertical-align:middle;"></span><span style="font-size: 40px; display:table-cell; vertical-align:middle;">&#176;F</span><img id="forecastWeatherIconDay4"> </div>
                 <!-- <br> -->
                 <p>Min: <span id="day4LT" ></span><span style="margin-right: 25px;">&#176;F</span> Max: <span id="day4HT"></span><span>&#176;F</span></p>
+              
             </div>
-            
+        </div>
+    </div>  
         </div>
     </section>
+
 
     <section class="history section">
         <div class="section is-size-4 has-text-light">
