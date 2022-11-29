@@ -6,6 +6,7 @@ var history = [];
 var CityInputEl = document.querySelector('.input');
 var searchHistory = document.querySelector('#city-history');
 var searchHistoryDiv = document.querySelector('.city-history')
+var citySearchHistory = JSON.parse(localStorage.getItem('searchHistory'));
 
 function show() {
     document.getElementById('hide').style.display = "block";
@@ -310,30 +311,39 @@ function getWeather(weatherCityName) {
 function displaySearchHistory () {
     searchHistory.innerHTML = '';
 
-    for (var i = 0; history.length; i++) {
+    for (var i = 0; searchHistoryDiv.length; i++) {
         var button = document.createElement('button')
-        button.setAttribute('type', 'button')
-        button.setAttribute('data-search', history[i]);
-        button.textContent = history[i];
+        button.textContent = citySearchHistory[i];
         searchHistoryDiv.append(button);
+        searchHistoryDiv.addEventListener('click', function(e) {
+            var cityText = e.target.innerHTML
+            getWeather(cityText);
+        })
 }
 }
 // Create a function to push city history
-function pushSearchHistory(search){
-searchHistory
+function pushSearchHistory(history){
+    citySearchHistory.push(history);
+    localStorage.setItem('history', JSON.stringify(citySearchHistory))
+    displaySearchHistory();
 }
 
 // Create a function to grab city history
 function grabSearchHistory() {
-
+var storedHistory = localStorage.getItem('history');
+if (storedHistory) {
+    searchHistory = JSON.parse(storedHistory)
+}
+displaySearchHistory();
 }
 
-function handleSearchHistory(event) {
-    var search = button.getAttribute('data-search');
-    var button= event.target;
-    getWeather(search);
-}
+// function handleSearchHistory(event) {
+//     var search = button.getAttribute('');
+//     var button= event.target;
+//     getWeather(search);
+// }
 
 showMeButton.addEventListener("click", handleShowMeButtonClick);
-searchHistoryDiv.addEventListener("click", handleSearchHistory)
+searchHistoryDiv.addEventListener("click", displaySearchHistory)
 grabSearchHistory();
+displaySearchHistory();
