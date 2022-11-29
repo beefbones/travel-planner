@@ -10,55 +10,49 @@
     justify-content: space-around;
 }
 
-.cityinfo h2{
-    margin-bottom: 35px;
+
+#welcometo{
+    text-align: center;
+    font-size: 40px;
 }
+
+
+.cityFacts {
+    color: white;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    justify-content: space-around;
+    align-content: center;
+    font-size: 25px;
+}
+
+
+#state,#country,#region,#location1,#location2,#time{
+    border-style: solid;
+    border-color: white;
+    max-width: 500px;
+    min-width: 100px;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+.section h1{
+    text-align: center;
+}
+
 
 #welcometo{
     text-align: center;
     font-size: 50px;
 }
 
-.section h1{
-    text-align: center;
-}
-
-.cityinfo{
-text-align: center;
-}
-
-.cityinfo h2{
-    font-size: 40px;
-}
-
-ul{
-    line-height: 60px;
-}
-
-.cityinfo h2{
-    margin-bottom: 35px;
-}
-
-#welcometo{
-    text-align: center;
-    font-size: 50px;
-}
 
 .section h1{
     text-align: center;
 }
 
-.cityinfo{
-text-align: center;
-}
-
-.cityinfo h2{
-    font-size: 40px;
-}
-
-ul{
-    line-height: 60px;
-}
 
 .search {
     text-align: center;
@@ -78,26 +72,27 @@ ul{
     font-size: 40px;
 }
 
+
 #day1Date,#day2Date,#day3Date,#day4Date {
     color: white;
     text-align: center;
     font-size: 35px;
 }
 
-/* #forecastTempDay1,#forecastTempDay2,#forecastTempDay3,#forecastTempDay4 {
 
-} */
 span{
     color: white;
     
 }
 
+
 .card {
     background-color: rgb(27, 27, 27);
+    padding: 10px;
 }
+
 
 .columns {
     justify-content: center;
-    
 }
 
