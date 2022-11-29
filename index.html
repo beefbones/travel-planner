@@ -28,6 +28,9 @@
                 <button type="button" onclick='show()' class="button is-dark is-rounded">
                     <h2>Show Me</h2>
                 </button>
+                <button type="button" onclick='openModal()' class="button is-dark is-rounded">
+                    <h2>Need Help?</h2>
+                </button>
             </div>
         </section>
     </div>
@@ -164,6 +167,17 @@
             </div>
         </section>
     </main>
+</div>
+<!-- Create modal for client help -->
+<div class="modal">
+    <div class="modal-background" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <h3>Need Help?</h3>
+      <p id="help-text">When searching for your city make sure your spelling is correct. After searching for your preffered location click the "Show Me" button and all of your city and weather information will be displayed.</p>
+      <p id="leave">Please click on the X button or the putside of this popup to go back to search</p>
+    </div>
+    <button class="modal-close is-large" onclick="closeModal()" aria-label="close"></button>
+</div>
 
     <!-- Linked dayjs for formatting dates -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
