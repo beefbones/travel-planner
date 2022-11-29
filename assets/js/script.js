@@ -291,18 +291,7 @@ function getWeather(weatherCityName) {
     
 }
 
-// Create a function to display city history
-function displaySearchHistory() {
-    searchHistory.innerHTML = '';
 
-    for (var i = 0; history.length; i++) {
-        var button = document.createElement('button')
-        button.setAttribute('type', 'button')
-        button.setAttribute('data-search', history[i]);
-        button.textContent = history[i];
-        searchHistoryDiv.append(button);
-}
-}
 // modal variables
     var modal = document.querySelector(".modal")
     var modalBackground = document.querySelector(".modal-background")
@@ -347,12 +336,6 @@ if (storedHistory) {
 }
 displaySearchHistory();
 }
-
-// function handleSearchHistory(event) {
-//     var search = button.getAttribute('');
-//     var button= event.target;
-//     getWeather(search);
-// }
 
 showMeButton.addEventListener("click", handleShowMeButtonClick);
 searchHistoryDiv.addEventListener("click", displaySearchHistory)
