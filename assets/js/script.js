@@ -45,32 +45,32 @@ console.log(data)
 //Create Elements and append
 
 const currentcityEl = document.getElementById("welcometo");
-//currentcityEl.textContent = (welcometo);   
-currentcityEl.append(welcometo);
+currentcityEl.textContent = ("Welcome To " +welcometo);  
+//currentcityEl.append(welcometo);
 
 const stateEl = document.getElementById("state");
-//stateEl.textContent = (state);
-stateEl.append(state);
+stateEl.textContent = ("State: " +state);
+//stateEl.append(state);
 
 const countryEl = document.getElementById("country");
-//countryEl.textContent = (country);
-countryEl.append(country);
+countryEl.textContent = ("Country: " +country);
+//countryEl.append(country);
 
 const regionEl = document.getElementById("region");
-//regionEl.textContent = (region);
-regionEl.append(region);
+regionEl.textContent = ("Region: " +region);
+//regionEl.append(region);
 
 const longitudeEl = document.getElementById("location1");
-//longitudeEl.textContent = (location1);      
-longitudeEl.append(location1);
+longitudeEl.textContent = ("Longitude: " +location1);      
+//longitudeEl.append(location1);
 
 const latitudeEl = document.getElementById("location2");
-//latitudeEl.textContent = (location2);   
-latitudeEl.append(location2);
+latitudeEl.textContent = ("Latitude: " +location2);   
+//latitudeEl.append(location2);
 
 const timezoneEl = document.getElementById("time");
-//timezoneEl.textContent = (time);
-timezoneEl.append(time);   
+timezoneEl.textContent = ("Time: " +time);
+//timezoneEl.append(time);   
 
 });
 }
