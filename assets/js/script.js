@@ -6,7 +6,6 @@ var history = [];
 var CityInputEl = document.querySelector('.input');
 var searchHistory = document.querySelector('#city-history');
 var searchHistoryDiv = document.querySelector('.city-history')
-var citySearchHistory = JSON.parse(localStorage.getItem('searchHistory'));
 
 function show() {
     document.getElementById('hide').style.display = "block";
@@ -292,6 +291,18 @@ function getWeather(weatherCityName) {
     
 }
 
+// Create a function to display city history
+function displaySearchHistory() {
+    searchHistory.innerHTML = '';
+
+    for (var i = 0; history.length; i++) {
+        var button = document.createElement('button')
+        button.setAttribute('type', 'button')
+        button.setAttribute('data-search', history[i]);
+        button.textContent = history[i];
+        searchHistoryDiv.append(button);
+}
+}
 // modal variables
     var modal = document.querySelector(".modal")
     var modalBackground = document.querySelector(".modal-background")
@@ -300,12 +311,12 @@ function getWeather(weatherCityName) {
 //   function to open modal when button is clicked
     function openModal () {
     modal.classList.add('is-active');
-  }
+  };
 
 //   function to close modal when background is clicked
   function closeModal () {
     modal.classList.remove('is-active');
-  }
+  };
   
   // Create a function to display city history
 function displaySearchHistory () {
@@ -329,7 +340,7 @@ function pushSearchHistory(history){
 }
 
 // Create a function to grab city history
-function grabSearchHistory() {
+function grabSearchHistory()() {
 var storedHistory = localStorage.getItem('history');
 if (storedHistory) {
     searchHistory = JSON.parse(storedHistory)
