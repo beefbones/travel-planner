@@ -12,6 +12,10 @@ function show() {
     document.getElementById('hide').style.display = "block";
  }
 
+function show() {
+    document.getElementById('hide').style.display = "block";
+ }
+
 function getCity(cityInput) {
 //API URL Variables
 var cityApiKey = "xz9CFx5R4H8EGh1CEKp44F6fmYieC9PB";
@@ -292,6 +296,7 @@ function getWeather(weatherCityName) {
     
 }
 
+
 // modal variables
     var modal = document.querySelector(".modal")
     var modalBackground = document.querySelector(".modal-background")
@@ -300,12 +305,12 @@ function getWeather(weatherCityName) {
 //   function to open modal when button is clicked
     function openModal () {
     modal.classList.add('is-active');
-  }
+  };
 
 //   function to close modal when background is clicked
   function closeModal () {
     modal.classList.remove('is-active');
-  }
+  };
   
   // Create a function to display city history
 function displaySearchHistory () {
@@ -330,9 +335,7 @@ function pushSearchHistory(history){
 
 // Create a function to grab city history
 function grabSearchHistory() {
-var storedHistory = localStorage.getItem('history');
-if (storedHistory) {
-    searchHistory = JSON.parse(storedHistory)
+
 }
 displaySearchHistory();
 }
