@@ -7,6 +7,11 @@ var CityInputEl = document.querySelector('.input');
 var searches = document.querySelector('#city-history');
 var searched = JSON.parse(localStorage.getItem('history')) || [];
 
+function show() {
+    document.getElementById('hide').style.display = "block";
+ }
+
+ 
 function getCity(cityInput) {
 //API URL Variables
 var cityApiKey = "xz9CFx5R4H8EGh1CEKp44F6fmYieC9PB";
@@ -38,14 +43,6 @@ console.log(data)
     
 
 //Create Elements and append
-
-
-function show() {
-    document.getElementById('hide').style.display = "block";
- }
-
-
-
 
 const currentcityEl = document.getElementById("welcometo");
 //currentcityEl.textContent = (welcometo);   

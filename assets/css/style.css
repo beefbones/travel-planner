@@ -84,9 +84,9 @@ ul{
     font-size: 35px;
 }
 
-#forecastTempDay1,#forecastTempDay2,#forecastTempDay3,#forecastTempDay4 {
-    align-content: center;
-}
+/* #forecastTempDay1,#forecastTempDay2,#forecastTempDay3,#forecastTempDay4 {
+
+} */
 span{
     color: white;
     
