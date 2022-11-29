@@ -329,7 +329,7 @@ function pushSearchHistory(history){
 }
 
 // Create a function to grab city history
-function grabSearchHistory()() {
+function grabSearchHistory() {
 var storedHistory = localStorage.getItem('history');
 if (storedHistory) {
     searchHistory = JSON.parse(storedHistory)
@@ -340,4 +340,3 @@ displaySearchHistory();
 showMeButton.addEventListener("click", handleShowMeButtonClick);
 searchHistoryDiv.addEventListener("click", displaySearchHistory)
 grabSearchHistory();
-displaySearchHistory();
