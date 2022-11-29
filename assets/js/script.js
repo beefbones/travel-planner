@@ -358,5 +358,20 @@ function grabHistory()  {
         })
     }
 }
+// modal variables
+    var modal = document.querySelector(".modal")
+    var modalBackground = documwnt.querySelector(".modal-background")
+    var closeBtn = document.querySelector(".close")
+
+//   function to open modal when button is clicked
+    function openModal () {
+    modal.classList.add('is-active');
+  }
+
+//   function to close modal when background is clicked
+  function closeModal () {
+    modal.classList.remove('is-active');
+  }
+  
 
 showMeButton.addEventListener("click", handleShowMeButtonClick);
