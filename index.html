@@ -35,19 +35,19 @@
         </section>
     </div>
 
-<div>
+
     <main id="hide" style="display:none;">
         <!-- Create section to display city name -->
         <section class="section is-small has-text-light">
             <h1 id="welcometo"> Welcome To  </h1>
         </section>
-    <!-- Create section for city information -->
-    
-    <section class="section">
-        <div class="container cityinfo">
-        <h2 class="has-text-light is-size-4">City Facts:</h2><br>
 
-        <div class="cityFacts">
+        <!-- Create section for city information -->
+        <section class="section">
+            <div class="container cityinfo">
+            <h2 class="has-text-light is-size-4">City Facts:</h2><br>
+
+            <div class="cityFacts">
             <div id="state">State: </div>
             <div id="country">Country: </div>
             <div id="region">Region: </div>
@@ -55,7 +55,7 @@
             <div id="location2">Latitude: </div>
             <div id="time">Zone:</div>
 
-        </div></div>
+             </div></div>
         </section>
 
 
@@ -66,7 +66,7 @@
 
                 <div class="columns is-multiline is-mobile">
 
-                    <div class="column is-half-mobile is-4-tablet is-one-fifth-desktop">
+                    <section class="column is-half-mobile is-4-tablet is-one-fifth-desktop">
 
                         <div class="card" id="info1">
                             <p id="currentDate"></p>
@@ -83,9 +83,9 @@
                                 <span>&#176;F</span>
                             </p>
                         </div>
-                    </div>
+                    </section>
 
-                    <div class="column is-half-mobile is-4-tablet is-one-fifth-desktop">
+                    <section class="column is-half-mobile is-4-tablet is-one-fifth-desktop">
                         <div class="card" id="info1">
                             <p id="day1Date"></p>
 
@@ -101,9 +101,9 @@
                                 <span>&#176;F</span>
                             </p>
                         </div>
-                    </div>
+                    </section>
 
-                    <div class="column is-6-mobile is-4-tablet is-one-fifth-desktop">
+                    <section class="column is-6-mobile is-4-tablet is-one-fifth-desktop">
                         <div class="card" id="info1">
                             <p id="day2Date"></p>
 
@@ -119,9 +119,9 @@
                                 <span>&#176;F</span>
                             </p>
                         </div>
-                    </div>
+                    </section>
 
-                    <div class="column is-6-mobile is-4-tablet is-one-fifth-desktop">
+                    <section class="column is-6-mobile is-4-tablet is-one-fifth-desktop">
                         <div class="card" id="info1">
                             <p id="day3Date"></p>
 
@@ -137,45 +137,39 @@
                                 <span>&#176;F</span>
                             </p>
                         </div>
-                    </div>
+                     </section>
 
-                    <div class="column is-6-mobile is-4-tablet is-one-fifth-desktop">
+                    <section class="column is-6-mobile is-4-tablet is-one-fifth-desktop">
                         <div class="card" id="info1">
-                            <p id="day4Date"></p>
+                          <p id="day4Date"></p>
 
                             <div class="column">
                                 <span id="forecastTempDay4"></span>
                                 <span>&#176;F</span>
                                 <img id="forecastWeatherIconDay4">
                             </div>
-                            <p>L: <span id="day4LT"></span>
-                                <span>&#176;F</span>
-                                H:
-                                <span id="day4HT"></span>
-                                <span>&#176;F</span>
-                            </p>
+                                <p>L: <span id="day4LT"></span>
+                                   <span>&#176;F</span>
+                                   H:
+                                  <span id="day4HT"></span>
+                                  <span>&#176;F</span>
+                                </p>
                         </div>
-
-                    </div>
-
-
+                    </section>
                 </div>
             </div>
         </section>
 
+        <section class="section">
+            <h2 class="has-text-light is-size-4">Search History:</h2>
+            <div class="city-history" id="city-history">
+                
+            </div>
+        </section>
     </main>
-</div>
-<!-- Create modal for client help -->
-<div class="modal">
-    <div class="modal-background" onclick="closeModal()"></div>
-    <div class="modal-content">
-      <h3>Need Help?</h3>
-      <p id="help-text">When searching for your city make sure your spelling is correct. After searching for your preffered location click the "Show Me" button and all of your city and weather information will be displayed.</p>
-      <p id="leave">Please click on the X button or the putside of this popup to go back to search</p>
-    </div>
-    <button class="modal-close is-large" onclick="closeModal()" aria-label="close"></button>
-</div>
 
+
+    <!-- Linked dayjs for formatting dates -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
         integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/utc.min.js"
@@ -184,10 +178,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/timezone.min.js"
         integrity="sha512-pslqxxHAYPCxaSeFSmXXxDkLejD5dbFVC66aiVq0z4v7VTJBU+wqcG1OpNh4p3MjS2D6NCwz/H2QmSc7dXxryg=="
         crossorigin="anonymous"></script>
-
     <script type="text/javascript" src="./assets/js/script.js"></script>
 
 
 </body>
-
 </html>

@@ -2,16 +2,11 @@ dayjs.extend(window.dayjs_plugin_utc);
 dayjs.extend(window.dayjs_plugin_timezone);
 
 
-
+var history = [];
 var CityInputEl = document.querySelector('.input');
-var searches = document.querySelector('#city-history');
-var searched = JSON.parse(localStorage.getItem('history')) || [];
+var searchHistory = document.querySelector('#city-history');
+var searchHistoryDiv = document.querySelector('.city-history')
 
-function show() {
-    document.getElementById('hide').style.display = "block";
- }
-
- 
 function getCity(cityInput) {
 //API URL Variables
 var cityApiKey = "xz9CFx5R4H8EGh1CEKp44F6fmYieC9PB";
@@ -32,7 +27,7 @@ var cityInput = data.list;
 console.log(data)
 
 
-//Current city varaibles
+//Current city variables
     var welcometo = data[0].EnglishName;
     var state = data[0].AdministrativeArea.LocalizedName;
     var country = data[0].Country.EnglishName;
@@ -45,42 +40,34 @@ console.log(data)
 //Create Elements and append
 
 const currentcityEl = document.getElementById("welcometo");
-currentcityEl.textContent = ("Welcome To " +welcometo);  
-//currentcityEl.append(welcometo);
+currentcityEl.append(welcometo);
 
 const stateEl = document.getElementById("state");
-stateEl.textContent = ("State: " +state);
-//stateEl.append(state);
+
+stateEl.append(state);
 
 const countryEl = document.getElementById("country");
-countryEl.textContent = ("Country: " +country);
-//countryEl.append(country);
+countryEl.append(country);
 
 const regionEl = document.getElementById("region");
-regionEl.textContent = ("Region: " +region);
-//regionEl.append(region);
+regionEl.append(region);
 
 const longitudeEl = document.getElementById("location1");
-longitudeEl.textContent = ("Longitude: " +location1);      
-//longitudeEl.append(location1);
+longitudeEl.append(location1);
 
 const latitudeEl = document.getElementById("location2");
-latitudeEl.textContent = ("Latitude: " +location2);   
-//latitudeEl.append(location2);
+latitudeEl.append(location2);
 
 const timezoneEl = document.getElementById("time");
-timezoneEl.textContent = ("Time: " +time);
-//timezoneEl.append(time);   
+timezoneEl.append(time);   
 
 });
 }
 
-
- 
 //DOM Elements for weather
 var showMeButton = document.querySelector(".button");
 var searchInputEl = document.querySelector("#search-input");
-
+// Function for the user input
 function handleShowMeButtonClick(event) {
     event.preventDefault();
     var cityName = searchInputEl.value.trim();
@@ -97,8 +84,6 @@ function getWeather(weatherCityName) {
     var weatherLimit = "1";                             
     var forecastWeatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${weatherCityName}&units=imperial&appid=${weatherApiKey}`;
     var currentWeatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCityName}&units=imperial&appid=${weatherApiKey}`;
-    // console.log('forecastWeatherApiUrl: ', forecastWeatherApiUrl);
-    // console.log('currentWeatherApiUrl: ', currentWeatherApiUrl);
 
     //forecast variables
     var cityName;                              
@@ -130,7 +115,6 @@ function getWeather(weatherCityName) {
 
     //forecast data fetch
     fetch(forecastWeatherApiUrl).then((response) => response.json()).then((data) => {
-        // console.log(data);
         cityName = data.city.name;
         var forecastList = data.list;
 
@@ -196,115 +180,86 @@ function getWeather(weatherCityName) {
                 }
             }
         }
-        // console.log('day1LT', day1LT);
-        // console.log('day1HT', day1HT);
-        // console.log('day1Date', day1Date);
-        // console.log('day2LT', day2LT);
-        // console.log('day2HT', day2HT);
-        // console.log('day2Date', day2Date);
-        // console.log('day3LT', day3LT);
-        // console.log('day3HT', day3HT);
-        // console.log('day3Date', day3Date);
-        // console.log('day4LT', day4LT);
-        // console.log('day4HT', day4HT);
-        // console.log('day4Date', day4Date);
-        // console.log('day5LT', day5LT);
-        // console.log('day5HT', day5HT);
-        // console.log('day5Date', day5Date);
 
         //new dates forecast
-        var day1CardDate = dayjs().add(1, 'day').format('dddd');
-        var day2CardDate = dayjs().add(2, 'day').format('dddd');
-        var day3CardDate = dayjs().add(3, 'day').format('dddd');
-        var day4CardDate = dayjs().add(4, 'day').format('dddd');
-        var day5CardDate = dayjs().add(5, 'day').format('dddd');
+        var day1CardDate = dayjs().add(1, 'day').format('M/D/YYYY');
+        var day2CardDate = dayjs().add(2, 'day').format('M/D/YYYY');
+        var day3CardDate = dayjs().add(3, 'day').format('M/D/YYYY');
+        var day4CardDate = dayjs().add(4, 'day').format('M/D/YYYY');
+        var day5CardDate = dayjs().add(5, 'day').format('M/D/YYYY');
 
          //Day1 forecast weather elements
          const forecastCardDateEl = document.getElementById("day1Date");
          forecastCardDateEl.textContent = day1CardDate;
-        //  forecastCardDateEl.append(day1CardDate);
 
          const forecastCardTempEl = document.getElementById("forecastTempDay1");
          forecastCardTempEl.textContent = (Math.floor(forecastTempDay1));
-         // forecastCardTempEl.append(Math.floor(forecastTempDay1));
 
          const forecastCardWeatherIconEl = document.getElementById("forecastWeatherIconDay1");
          forecastCardWeatherIconEl.setAttribute('src', `https://openweathermap.org/img/wn/${forecastWeatherIconDay1}@2x.png`);
 
          const forecastCardTempMinEl = document.getElementById("day1HT");
          forecastCardTempMinEl.textContent = (Math.floor(day1HT));
-         // forecastCardTempMinEl.append(Math.floor(day1HT));
 
          const forecastCardTempMaxEl = document.getElementById("day1LT");
          forecastCardTempMaxEl.textContent = (Math.floor(day1LT));
-         // forecastCardTempMaxEl.append(Math.floor(day1LT));
+
 
          //Day2 forecast weather elements
          const forecastCardDateDay2El = document.getElementById("day2Date");
          forecastCardDateDay2El.textContent = (day2CardDate);
-         // forecastCardDateDay2El.append(day2CardDate);
 
          const forecastCardTempDay2El = document.getElementById("forecastTempDay2");
          forecastCardTempDay2El.textContent = (Math.floor(forecastTempDay2));
-         // forecastCardTempDay2El.append(Math.floor(forecastTempDay2));
 
          const forecastCardWeatherIconDay2El = document.getElementById("forecastWeatherIconDay2");
          forecastCardWeatherIconDay2El.setAttribute('src', `https://openweathermap.org/img/wn/${forecastWeatherIconDay2}@2x.png`);
 
          const forecastCardTempMinDay2El = document.getElementById("day2HT");
          forecastCardTempMinDay2El.textContent = (Math.floor(day2HT));
-         // forecastCardTempMinDay2El.append(Math.floor(day2HT));
 
          const forecastCardTempMaxDay2El = document.getElementById("day2LT");
          forecastCardTempMaxDay2El.textContent = (Math.floor(day2LT));
-        // forecastCardTempMaxDay2El.append(Math.floor(day2LT));
+
 
          //Day3 forecast weather elements
          const forecastCardDateDay3El = document.getElementById("day3Date");
          forecastCardDateDay3El.textContent = (day3CardDate);
-        // forecastCardDateDay3El.append(day3CardDate);
 
          const forecastCardTempDay3El = document.getElementById("forecastTempDay3");
          forecastCardTempDay3El.textContent = (Math.floor(forecastTempDay3));
-        // forecastCardTempDay3El.append(Math.floor(forecastTempDay3));
 
          const forecastCardWeatherIconDay3El = document.getElementById("forecastWeatherIconDay3");
          forecastCardWeatherIconDay3El.setAttribute('src', `https://openweathermap.org/img/wn/${forecastWeatherIconDay3}@2x.png`);
 
          const forecastCardTempMinDay3El = document.getElementById("day3HT");
          forecastCardTempMinDay3El.textContent = (Math.floor(day3HT));
-        // forecastCardTempMinDay3El.append(Math.floor(day3HT));
 
          const forecastCardTempMaxDay3El = document.getElementById("day3LT");
-         forecastCardTempMaxDay3El.textContent = (Math.floor(day3LT));    
-        // forecastCardTempMaxDay3El.append(Math.floor(day3LT));
+         forecastCardTempMaxDay3El.textContent = (Math.floor(day3LT));  
+
 
          //Day4 forecast weather elements
          const forecastCardDateDay4El = document.getElementById("day4Date");
          forecastCardDateDay4El.textContent = (day4CardDate);
-        // forecastCardDateDay4El.append(day4CardDate);
 
          const forecastCardTempDay4El = document.getElementById("forecastTempDay4");
          forecastCardTempDay4El.textContent = (Math.floor(forecastTempDay4));   
-        // forecastCardTempDay4El.append(Math.floor(forecastTempDay4));
 
          const forecastCardWeatherIconDay4El = document.getElementById("forecastWeatherIconDay4");
          forecastCardWeatherIconDay4El.setAttribute('src', `https://openweathermap.org/img/wn/${forecastWeatherIconDay4}@2x.png`);
 
          const forecastCardTempMinDay4El = document.getElementById("day4HT");
          forecastCardTempMinDay4El.textContent = (Math.floor(day4HT));
-        // forecastCardTempMinDay4El.append(Math.floor(day4HT));
 
          const forecastCardTempMaxDay4El = document.getElementById("day4LT");
          forecastCardTempMaxDay4El.textContent = (Math.floor(day4LT));
-        // forecastCardTempMaxDay4El.append(Math.floor(day4LT));
 
     });
     //current weather data fetch
     fetch(currentWeatherApiUrl).then((response) => response.json()).then((data) => {
-        // console.log(data);
         var currentDate = dayjs.utc();
-        currentDate= currentDate.local().format('dddd');
+        currentDate= currentDate.local().format('M/D/YYYY');
         var currentTemp = data.main.temp;
         var currentTempFeels = data.main.feels_like;
         var currentTempMin = data.main.temp_min;
@@ -312,51 +267,37 @@ function getWeather(weatherCityName) {
         var weatherDescription = data.weather[0].description;
         var weatherIcon = data.weather[0].icon;
         var weatherIconURL = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
-        // console.log("currentDate:", currentDate);
-        // console.log("currentTemp:", currentTemp);
-        // console.log("currentTempFeels:", currentTempFeels);
-        // console.log("currentTempMin:", currentTempMin);
-        // console.log("currentTempMax:", currentTempMax);
-        // console.log("weatherDescription:", weatherDescription);
-        // console.log("weatherIcon:", weatherIcon);
-        // console.log("weatherIconURL:", weatherIconURL);
 
         //creating Current date weather elements
         const currentCardDateEl = document.getElementById("currentDate");
         currentCardDateEl.textContent = (currentDate);
-        // currentCardDateEl.append(currentDate);
 
         const currentCardTempEl = document.getElementById("currentTemp");
         currentCardTempEl.textContent = (Math.floor(currentTemp));
-        // currentCardTempEl.append(Math.floor(currentTemp));
 
         const currentCardWeatherIconEl = document.getElementById("weatherIcon");
         currentCardWeatherIconEl.setAttribute('src', weatherIconURL);
 
         const currentCardTempMinEl = document.getElementById("currentTempMin");
         currentCardTempMinEl.textContent = (Math.floor(currentTempMin));
-        // currentCardTempMinEl.append(Math.floor(currentTempMin));
 
         const currentCardTempMaxEl = document.getElementById("currentTempMax");
-        currentCardTempMaxEl.textContent = (Math.floor(currentTempMax));
-        // currentCardTempMaxEl.append(Math.floor(currentTempMax));    
+        currentCardTempMaxEl.textContent = (Math.floor(currentTempMax)); 
     });
     
 }
 
-// Create function to get city history
-function grabHistory()  {
-    searches.innerHTML = "";
-    for (var i = 0; i < searched.length; i++) {
-        var list = document.createElement('li');
-        list.textContent = searched[i];
-        searches.append(list);
+// Create a function to display city history
+function displaySearchHistory {
+    searchHistory.innerHTML = '';
 
-        list.addEventListener('click', function(event) {
-            var text = event.target.innerHTML
-
-        })
-    }
+    for (var i = 0; history.length; i++) {
+        var button = document.createElement('button')
+        button.setAttribute('type', 'button')
+        button.setAttribute('data-search', history[i]);
+        button.textContent = history[i];
+        searchHistoryDiv.append(button);
+}
 }
 // modal variables
     var modal = document.querySelector(".modal")
@@ -374,4 +315,22 @@ function grabHistory()  {
   }
   
 
+// Create a function to push city history
+function pushSearchHistory(search){
+searchHistory
+}
+
+// Create a function to grab city history
+function grabSearchHistory {
+
+}
+
+function handleSearchHistory(event) {
+    var search = button.getAttribute('data-search');
+    var button= event.target;
+    getWeather(search);
+}
+
 showMeButton.addEventListener("click", handleShowMeButtonClick);
+searchHistoryDiv.addEventListener("click", handleSearchHistory)
+grabSearchHistory();

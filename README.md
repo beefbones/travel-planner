@@ -2,7 +2,13 @@
 
 ## Description
 
-This website was created to inform the user about the city they would like to travel to. Simply input the name of a city, and it will return the current weather, the 5 day forecast, and relevant information about the city.
+This website was created to inform the user about the city they would like to travel to. Simply input the name of a city, and it will return relevant information about the city, and a 5 day weather forecast.
+
+## User Story
+
+As a travel user
+I want a website that will display relevant information about the city I travel to
+So that I would be more informed about what to expect.
 
 ## Usage
 
@@ -11,6 +17,17 @@ The following image shows the web application's appearance and functionality:
 
 This is the link to the deployed website:
 -[Planner Website](https://beefbones.github.io/travel-planner/)
+
+## Authors
+@beefbones
+
+@dianavw8
+
+@fernandot10
+
+@putput10
+
+@hayesejasmine
 
 ## License
 
