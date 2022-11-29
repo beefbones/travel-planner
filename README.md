@@ -2,7 +2,7 @@
 
 ## Description
 
-This website was created to inform the user about the city they would like to travel to. Simply input the name of a city, and it will return relevant information about the city, and a 5 day weather forecast.
+This website was created to inform the user about the city they would like to travel to. Simply input the name of a city, and it will return relevant information about the city, and a 5 day weather forecast!
 
 ## User Story
 
