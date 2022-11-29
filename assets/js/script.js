@@ -307,12 +307,12 @@ function displaySearchHistory {
 //   function to open modal when button is clicked
     function openModal () {
     modal.classList.add('is-active');
-  }
+  };
 
 //   function to close modal when background is clicked
   function closeModal () {
     modal.classList.remove('is-active');
-  }
+  };
   
 
 // Create a function to push city history
