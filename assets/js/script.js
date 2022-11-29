@@ -6,11 +6,6 @@ var history = [];
 var CityInputEl = document.querySelector('.input');
 var searchHistory = document.querySelector('#city-history');
 var searchHistoryDiv = document.querySelector('.city-history')
-var citySearchHistory = JSON.parse(localStorage.getItem('searchHistory'));
-
-function show() {
-    document.getElementById('hide').style.display = "block";
- }
 
 function show() {
     document.getElementById('hide').style.display = "block";
@@ -335,18 +330,13 @@ function pushSearchHistory(history){
 
 // Create a function to grab city history
 function grabSearchHistory() {
-
+var storedHistory = localStorage.getItem('history');
+if (storedHistory) {
+    searchHistory = JSON.parse(storedHistory)
 }
 displaySearchHistory();
 }
-
-// function handleSearchHistory(event) {
-//     var search = button.getAttribute('');
-//     var button= event.target;
-//     getWeather(search);
-// }
 
 showMeButton.addEventListener("click", handleShowMeButtonClick);
 searchHistoryDiv.addEventListener("click", displaySearchHistory)
 grabSearchHistory();
-displaySearchHistory();
