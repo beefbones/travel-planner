@@ -39,6 +39,14 @@ console.log(data)
 
 //Create Elements and append
 
+
+function show() {
+    document.getElementById('hide').style.display = "block";
+ }
+
+
+
+
 const currentcityEl = document.getElementById("welcometo");
 //currentcityEl.textContent = (welcometo);   
 currentcityEl.append(welcometo);
@@ -208,11 +216,11 @@ function getWeather(weatherCityName) {
         // console.log('day5Date', day5Date);
 
         //new dates forecast
-        var day1CardDate = dayjs().add(1, 'day').format('M/D/YYYY');
-        var day2CardDate = dayjs().add(2, 'day').format('M/D/YYYY');
-        var day3CardDate = dayjs().add(3, 'day').format('M/D/YYYY');
-        var day4CardDate = dayjs().add(4, 'day').format('M/D/YYYY');
-        var day5CardDate = dayjs().add(5, 'day').format('M/D/YYYY');
+        var day1CardDate = dayjs().add(1, 'day').format('dddd');
+        var day2CardDate = dayjs().add(2, 'day').format('dddd');
+        var day3CardDate = dayjs().add(3, 'day').format('dddd');
+        var day4CardDate = dayjs().add(4, 'day').format('dddd');
+        var day5CardDate = dayjs().add(5, 'day').format('dddd');
 
          //Day1 forecast weather elements
          const forecastCardDateEl = document.getElementById("day1Date");
@@ -299,7 +307,7 @@ function getWeather(weatherCityName) {
     fetch(currentWeatherApiUrl).then((response) => response.json()).then((data) => {
         // console.log(data);
         var currentDate = dayjs.utc();
-        currentDate= currentDate.local().format('M/D/YYYY');
+        currentDate= currentDate.local().format('dddd');
         var currentTemp = data.main.temp;
         var currentTempFeels = data.main.feels_like;
         var currentTempMin = data.main.temp_min;
