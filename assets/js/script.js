@@ -7,6 +7,10 @@ var CityInputEl = document.querySelector('.input');
 var searchHistory = document.querySelector('#city-history');
 var searchHistoryDiv = document.querySelector('.city-history')
 
+function show() {
+    document.getElementById('hide').style.display = "block";
+ }
+
 function getCity(cityInput) {
 //API URL Variables
 var cityApiKey = "xz9CFx5R4H8EGh1CEKp44F6fmYieC9PB";
@@ -288,7 +292,7 @@ function getWeather(weatherCityName) {
 }
 
 // Create a function to display city history
-function displaySearchHistory {
+function displaySearchHistory() {
     searchHistory.innerHTML = '';
 
     for (var i = 0; history.length; i++) {
@@ -301,7 +305,7 @@ function displaySearchHistory {
 }
 // modal variables
     var modal = document.querySelector(".modal")
-    var modalBackground = documwnt.querySelector(".modal-background")
+    var modalBackground = document.querySelector(".modal-background")
     var closeBtn = document.querySelector(".close")
 
 //   function to open modal when button is clicked
@@ -321,7 +325,7 @@ searchHistory
 }
 
 // Create a function to grab city history
-function grabSearchHistory {
+function grabSearchHistory() {
 
 }
 
