@@ -82,8 +82,8 @@ function handleShowMeButtonClick(event) {
     event.preventDefault();
     var cityName = searchInputEl.value.trim();
     getWeather(cityName);
-var currentCity = searchInputEl.value.trim();
-    getCity(currentCity)
+    getCity(cityName)
+    pushSearchHistory(cityName);
 }
 
 function getWeather(weatherCityName) {
@@ -319,7 +319,7 @@ function displaySearchHistory () {
 
     for (var i = 0; searchHistoryDiv.length; i++) {
         var button = document.createElement('button')
-        button.textContent = citySearchHistory[i];
+        button.textContent = storage.value[i];
         searchHistoryDiv.append(button);
         searchHistoryDiv.addEventListener('click', function(e) {
             var cityText = e.target.innerHTML
@@ -329,8 +329,8 @@ function displaySearchHistory () {
 }
 // Create a function to push city history
 function pushSearchHistory(history){
-    citySearchHistory.push(history);
-    localStorage.setItem('history', JSON.stringify(citySearchHistory))
+    var storage = JSON.parse(localStorage.getItem('history')) || [];
+    storage.push(history);
     displaySearchHistory();
 }
 
